@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { AngularLpService } from './angular-lp.service';
+import { AngularLpService } from './ng-lp.service';
 
 describe('AngularLpService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

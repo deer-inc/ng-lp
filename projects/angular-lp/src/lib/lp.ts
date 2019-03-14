@@ -43,6 +43,11 @@ export interface Concept {
   text: string;
 }
 
+export interface Menu {
+  label: string;
+  url: string;
+}
+
 export interface Organization {
   name: string;
   address: {
@@ -61,6 +66,7 @@ export interface Organization {
 export interface Lp {
   title: string;
   description: string;
+  menues: Menu[];
   contents: {
     hero: {
       mainText: string;

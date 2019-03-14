@@ -1,0 +1,22 @@
+<ng-container *ngIf="data">
+  <header class="nglp-header">
+    <div class="nglp-container">
+      <div class="nglp-header__wrap">
+        <h1 class="nglp-header__logo">{{data.title}}</h1>
+        <ul class="nglp-menu">
+          <li class="nglp-menu__item" *ngFor="let menu of data.menues">
+            <a [href]="menu.url">{{menu.label}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <div class="nglp-hero">
+    <div class="nglp-container">
+      <p *ngIf="data.contents.hero.mainText" class="nglp-hero__main-text">{{data.contents.hero.mainText}}</p>
+      <p *ngIf="data.contents.hero.subText" class="nglp-hero__sub-text">{{data.contents.hero.subText}}</p>
+      <a *ngIf="data.contents.hero.actionLabel" [href]="data.contents.hero.actionURL" class="nglp-btn">{{data.contents.hero.actionLabel}}</a>
+    </div>
+  </div>
+</ng-container>
