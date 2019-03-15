@@ -20,7 +20,7 @@
       <div class="nglp-container">
         <p *ngIf="data.contents.hero.mainText" class="nglp-hero__main-text">{{data.contents.hero.mainText}}</p>
         <p *ngIf="data.contents.hero.subText" class="nglp-hero__sub-text">{{data.contents.hero.subText}}</p>
-        <a *ngIf="data.contents.hero.actionLabel" [href]="data.contents.hero.actionURL" class="nglp-btn">{{data.contents.hero.actionLabel}}</a>
+        <a *ngIf="data.contents.hero.actionLabel" [href]="data.contents.hero.actionURL" class="nglp-btn nglp-btn--white">{{data.contents.hero.actionLabel}}</a>
       </div>
     </div>
   </section>
@@ -28,14 +28,18 @@
   <section class="nglp-section" *ngIf="data.contents.concept">
     <div class="nglp-container">
       <div class="nglp-concept">
-        <p>{{data.contents.concept.body}}</p>
+        <figure class="nglp-concept__image"></figure>
+        <div class="nglp-concept__body">
+          <h2 class="nglp-concept__title">{{data.contents.concept.title}}</h2>
+          <p class="nglp-concept__description">{{data.contents.concept.description}}</p>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="nglp-section" *ngIf="data.contents.features">
     <div class="nglp-container">
-      <h2 class="nglp-hdg">特徴</h2>
+      <h2 class="nglp-hdg">FEATURES</h2>
       <div class="nglp-grid nglp-grid--4">
         <div class="nglp-feature" *ngFor="let feature of data.contents.features">
           <figure class="nglp-feature__thumbnail" [style.background-image]="'url(' + feature.imageURL + ')' | safe:'style'"></figure>
@@ -48,7 +52,7 @@
 
   <section class="nglp-section" *ngIf="data.contents.services">
     <div class="nglp-container">
-      <h2 class="nglp-hdg">サービス</h2>
+      <h2 class="nglp-hdg">SERVICES</h2>
       <div class="nglp-grid nglp-grid--4">
         <div class="nglp-service" *ngFor="let service of data.contents.services">
           <figure class="nglp-service__thumbnail" [style.background-image]="'url(' + service.imageURL + ')' | safe:'style'"></figure>
@@ -86,7 +90,7 @@
 
   <section class="nglp-section" *ngIf="data.contents.voices">
     <div class="nglp-container">
-      <h2 class="nglp-hdg">ユーザーボイス</h2>
+      <h2 class="nglp-hdg">VOICES</h2>
       <div class="nglp-grid nglp-grid--3">
         <div class="nglp-voice" *ngFor="let voice of data.contents.voices">
           <figure class="nglp-voice__thumbnail" [style.background-image]="'url(' + voice.photoURL + ')' | safe:'style'"></figure>
@@ -110,6 +114,10 @@
 
 <footer class="nglp-footer">
   <div class="nglp-container">
-    <p><small>&copy; {{data.owner}}</small></p>
+    <p class="nglp-footer__logo">
+      <img *ngIf="data.logoURL" [src]="data.logoURL" alt="data.title">
+      <span *ngIf="!data.logoURL">{{data.title}}</span>
+    </p>
+    <p class="nglp-footer__copyright"><small>&copy; {{data.owner}}</small></p>
   </div>
 </footer>

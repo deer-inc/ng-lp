@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Lp } from 'projects/angular-lp/src/lib/lp';
+import { Lp, Voice, Feature, Service } from 'projects/angular-lp/src/lib/lp';
 
 import * as faker from 'faker/locale/ja';
 
@@ -10,7 +10,7 @@ import * as faker from 'faker/locale/ja';
 })
 export class AppComponent {
   data: Lp = {
-    title: faker.name.title(),
+    title: 'NGLP',
     owner: 'Deer, Inc',
     menues: [
       {
@@ -20,59 +20,18 @@ export class AppComponent {
     ],
     contents: {
       hero: {
-        mainText: 'デモデモ',
-        subText: 'サブテキスト',
+        mainText: faker.lorem.sentence(4),
+        subText: faker.lorem.lines(),
         actionLabel: 'はじめる',
         actionURL: 'xxx',
-        coverURL: 'https://dummyimage.com/100x100.png'
+        coverURL: faker.image.imageUrl(1800, 1000)
       },
       concept: {
-        body: 'コンセプト'
+        title: faker.lorem.sentence(5),
+        description: faker.lorem.paragraph()
       },
-      features: [
-        {
-          imageURL: 'https://dummyimage.com/100x100.png',
-          title: 'aaaa',
-          description: 'aaaa',
-        },
-        {
-          imageURL: 'https://dummyimage.com/100x100.png',
-          title: 'aaaa',
-          description: 'aaaa',
-        },
-        {
-          imageURL: 'https://dummyimage.com/100x100.png',
-          title: 'aaaa',
-          description: 'aaaa',
-        },
-        {
-          imageURL: 'https://dummyimage.com/100x100.png',
-          title: 'aaaa',
-          description: 'aaaa',
-        },
-        {
-          imageURL: 'https://dummyimage.com/100x100.png',
-          title: 'aaaa',
-          description: 'aaaa',
-        },
-        {
-          imageURL: 'https://dummyimage.com/100x100.png',
-          title: 'aaaa',
-          description: 'aaaa',
-        },
-      ],
-      services: [
-        {
-          imageURL: 'https://dummyimage.com/100x100.png',
-          title: 'aaaa',
-          description: 'aaaa',
-        },
-        {
-          imageURL: 'https://dummyimage.com/100x100.png',
-          title: 'aaaa',
-          description: 'aaaa',
-        },
-      ],
+      features: this.getFeatures(8),
+      services: this.getServices(8),
       medias: [
         {
           name: 'aaa',
@@ -121,14 +80,44 @@ export class AppComponent {
           answer: 'されません。ローカルストレージで管理されます。',
         }
       ],
-      voices: [
-        {
-          name: faker.name.lastName() + ' ' + faker.name.firstName(),
-          position: faker.name.jobTitle(),
-          photoURL: faker.image.avatar(),
-          comment: faker.lorem.paragraph()
-        }
-      ]
+      voices: this.getVoices(6)
     }
   };
+
+  getVoices(count: number): Voice[] {
+    const result = [];
+    while (count--) {
+      result.push({
+        name: faker.name.lastName() + ' ' + faker.name.firstName(),
+        position: faker.name.jobTitle(),
+        photoURL: faker.image.avatar(),
+        comment: faker.lorem.lines(3)
+      });
+    }
+    return result;
+  }
+
+  getFeatures(count: number): Feature[] {
+    const result = [];
+    while (count--) {
+      result.push({
+        imageURL: faker.image.image(),
+        title: faker.lorem.words(3),
+        description: faker.lorem.sentence(),
+      });
+    }
+    return result;
+  }
+
+  getServices(count: number): Service[] {
+    const result = [];
+    while (count--) {
+      result.push({
+        imageURL: faker.image.image(),
+        title: faker.lorem.words(3),
+        description: faker.lorem.sentence(),
+      });
+    }
+    return result;
+  }
 }

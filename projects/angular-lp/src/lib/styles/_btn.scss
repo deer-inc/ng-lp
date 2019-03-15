@@ -1,0 +1,14 @@
+.nglp-btn {
+  border-radius: 30px;
+  line-height: 56px;
+  border: 2px solid rgba(black, .83);
+  display: inline-block;
+  padding: 0 24px;
+  min-width: 100px;
+  text-align: center;
+  letter-spacing: 2px;
+  font-size: 16px;
+  &--white {
+    border-color: white;
+  }
+}

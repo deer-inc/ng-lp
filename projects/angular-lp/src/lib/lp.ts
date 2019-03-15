@@ -42,7 +42,8 @@ export interface Contributor {
 }
 
 export interface Concept {
-  body: string;
+  title: string;
+  description: string;
 }
 
 export interface Menu {
