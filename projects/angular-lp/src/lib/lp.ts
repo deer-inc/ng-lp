@@ -9,6 +9,8 @@ export interface Feature {
   imageURL: string;
   title: string;
   description: string;
+  actionLabel?: string;
+  actionURL?: string;
 }
 
 export interface Service {
@@ -44,6 +46,7 @@ export interface Contributor {
 export interface Concept {
   title: string;
   description: string;
+  clipURL?: string;
 }
 
 export interface Menu {
@@ -101,5 +104,6 @@ export interface Lp {
     pricing?: Price[];
     contributor?: Contributor[];
     faqs: Faq[];
+    customSection?: string;
   };
 }

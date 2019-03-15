@@ -4,19 +4,23 @@
   align-items: center;
   &__image {
     width: 600px;
-    height: 300px;
-    margin-right: 24px;
+    text-align: center;
+    img {
+      max-width: 450px;
+      max-height: 400px;
+    }
   }
   &__body {
     flex: 1;
   }
   &__title {
     font-size: 32px;
-    font-weight: bold;
     margin-bottom: 24px;
     line-height: 1.4;
   }
   &__description {
-    line-height: 1.8;
+    line-height: 32px;
+    font-size: 16px;
+    color: rgba(black, .6);
   }
 }

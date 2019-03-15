@@ -13,23 +13,68 @@ export class AppComponent {
     title: 'NGLP',
     owner: 'Deer, Inc',
     account: {
-      gitHub: 'xxx'
+      gitHub: 'https://github.com/deer-inc/ng-lp',
+      twitter: 'https://twitter.com/d151005'
     },
     contents: {
       hero: {
-        mainText: faker.lorem.sentence(4),
-        subText: faker.lorem.lines(),
+        mainText: 'データをわたせば、できあがり。',
+        subText: '５分でLPが作れる、Angularライブラリ',
         actionLabel: 'はじめる',
         actionURL: 'xxx',
-        coverURL: faker.image.imageUrl(1800, 1000)
+        coverURL: './assets/hero.svg'
       },
       concept: {
-        title: faker.lorem.sentence(5),
-        description: faker.lorem.paragraph()
+        title: 'モダンなLPをサクッと作りたいあなたに',
+        description: 'OSSやMVPを作ったあと、その魅力を伝えるLPが必要になります。このライブラリを使えば必要な項目をデータで渡すだけでLPが完成します。このページもNGLPで作られています。',
+        clipURL: './assets/concept.png'
       },
-      features: this.getFeatures(8),
-      services: this.getServices(8),
-      medias: this.getMedias(8),
+      features: [
+        {
+          imageURL: faker.image.image(),
+          title: 'オープンソース',
+          description: 'NGLPはオープンソース(OSS)です。PRは常に歓迎されています。バグや要望があれば気軽にIssueを立ててください。',
+          actionLabel: 'GitHubリポジトリ',
+          actionURL: 'https://github.com/deer-inc/ng-lp'
+        },
+        {
+          imageURL: faker.image.image(),
+          title: 'MITライセンス',
+          description: 'MITライセンスなので商用利用はもちろん、自由に複製、改変をすることができます。もちろん無料です。',
+        },
+        {
+          imageURL: faker.image.image(),
+          title: '豊富なセクション',
+          description: 'メインビジュアル、ユーザーボイス、メディア掲載、特徴やコンセプトなど頻出セクションを網羅しています。',
+        },
+        {
+          imageURL: faker.image.image(),
+          title: 'マテリアルデザイン',
+          description: 'マテリアルデザインとWeb標準に沿ったRWD設計なので、高い閲覧性が担保されています。',
+        },
+        {
+          imageURL: faker.image.image(),
+          title: '柔軟なカスタマイズ',
+          description: 'カスタムセクションの追加やデザインカスタマイズが可能です。',
+        },
+        {
+          imageURL: faker.image.image(),
+          title: 'シンプルなインターフェイス',
+          description: '決まったフォーマットでデータをバインドするだけなので、学習コストは一切必要ありません。',
+        },
+        {
+          imageURL: faker.image.image(),
+          title: '軽量なライブラリ',
+          description: '依存ライブラリを削り、軽量なライブラリであることをテーマにしています。',
+        },
+      ],
+      medias: [
+        {
+          name: '株式会社Deer',
+          logoURL: './assets/deer.svg',
+          website: 'https://deer.co.jp'
+        }
+      ],
       faqs: [
         {
           question: '入力したデータはデータベースに保存されますか？',
@@ -60,30 +105,6 @@ export class AppComponent {
         imageURL: faker.image.image(),
         title: faker.lorem.words(3),
         description: faker.lorem.sentence(),
-      });
-    }
-    return result;
-  }
-
-  getServices(count: number): Service[] {
-    const result = [];
-    while (count--) {
-      result.push({
-        imageURL: faker.image.image(),
-        title: faker.lorem.words(3),
-        description: faker.lorem.sentence(),
-      });
-    }
-    return result;
-  }
-
-  getMedias(count: number): Media[] {
-    const result = [];
-    while (count--) {
-      result.push({
-        name: 'aaa',
-        logoURL: 'https://dummyimage.com/300x100.png',
-        website: ''
       });
     }
     return result;

@@ -1,19 +1,27 @@
 .nglp-footer {
-  padding: 160px 0 40px;
-  margin-top: 160px;
+  padding: 80px 0 40px;
+  overflow: hidden;
+  color: white;
+  background: #23232f;
   &__logo {
     letter-spacing: 2px;
     font-weight: bold;
     font-size: 24px;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
+    line-height: 1;
   }
   &__copyright {
-    color: rgba(black, .6);
+    opacity: 0.6;
   }
 }
 
 .nglp-footer-accounts {
+  display: flex;
+  margin-bottom: 24px;
+  line-height: 1;
   &__item {
-    font-size: 24px;
+    font-size: 32px;
+    margin-right: 16px;
+    opacity: 0.6;
   }
 }

@@ -31,19 +31,23 @@
     </div>
   </section>
 
-  <section class="nglp-section" *ngIf="data.contents.concept">
+  <section class="nglp-section" *ngIf="data.contents.concept as concept">
     <div class="nglp-container">
       <div class="nglp-concept">
-        <figure class="nglp-concept__image"></figure>
+        <figure *ngIf="concept.clipURL" class="nglp-concept__image">
+          <img [src]="concept.clipURL" alt="">
+        </figure>
         <div class="nglp-concept__body">
-          <h2 class="nglp-concept__title">{{data.contents.concept.title}}</h2>
-          <p class="nglp-concept__description">{{data.contents.concept.description}}</p>
+          <h2 class="nglp-concept__title">{{concept.title}}</h2>
+          <p class="nglp-concept__description">{{concept.description}}</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="nglp-section" *ngIf="data.contents.features">
+  <section [innerHTML]="data.customSection" *ngIf="data.customSection"></section>
+
+  <section class="nglp-section nglp-section--light" *ngIf="data.contents.features">
     <div class="nglp-container">
       <h2 class="nglp-hdg">FEATURES</h2>
       <div class="nglp-grid nglp-grid--4">
@@ -51,6 +55,11 @@
           <figure class="nglp-feature__thumbnail" [style.background-image]="'url(' + feature.imageURL + ')' | safe:'style'"></figure>
           <h3 class="nglp-feature__title">{{feature.title}}</h3>
           <p class="nglp-feature__description">{{feature.description}}</p>
+          <p *ngIf="feature.actionLabel" class="nglp-feature__link">
+            <a [href]="feature.actionURL" target="_blank">
+              {{feature.actionLabel}}
+            </a>
+          </p>
         </div>
       </div>
     </div>
@@ -69,7 +78,7 @@
     </div>
   </section>
 
-  <section class="nglp-section" *ngIf="data.contents.faqs">
+  <section class="nglp-section nglp-section--fill" *ngIf="data.contents.faqs">
     <div class="nglp-container">
       <h2 class="nglp-hdg">Q&A</h2>
       <div class="nglp-grid nglp-grid--2">
@@ -83,9 +92,9 @@
 
   <section class="nglp-section" *ngIf="data.contents.faqs">
     <div class="nglp-container">
-      <div class="nglp-grid nglp-grid--4">
+      <div class="nglp-media-wrap">
         <div class="nglp-media" *ngFor="let media of data.contents.medias">
-          <a href="" *ngIf="media.website">
+          <a [href]="media.website" *ngIf="media.website" target="_blank">
             <img [src]="media.logoURL" [alt]="media.name">
           </a>
           <img *ngIf="!media.website" [src]="media.logoURL" [alt]="media.name">
@@ -125,12 +134,12 @@
           <fa-icon [icon]="faGithub"></fa-icon>
         </a>
       </li>
-      <li *ngIf="account.twitter">
+      <li class="nglp-follow__item" *ngIf="account.twitter">
         <a [href]="account.twitter" target="_blank">
           <fa-icon [icon]="faTwitter"></fa-icon>
         </a>
       </li>
-      <li *ngIf="account.facebook">
+      <li class="nglp-follow__item" *ngIf="account.facebook">
         <a [href]="account.facebook" target="_blank">
           <fa-icon [icon]="faFacebook"></fa-icon>
         </a>

@@ -1,3 +1,14 @@
+.nglp-media-wrap {
+  display: flex;
+  justify-content: center;
+  margin: -24px;
+  flex-wrap: wrap;
+}
+
 .nglp-media {
   text-align: center;
+  margin: 24px;
+  img {
+    height: 80px;
+  }
 }

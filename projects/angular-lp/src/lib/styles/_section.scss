@@ -1,4 +1,8 @@
 .nglp-section {
   padding: 80px 0;
   background: center/cover;
+  position: relative;
+  &:nth-child(even) {
+    background: #fafafa;
+  }
 }
