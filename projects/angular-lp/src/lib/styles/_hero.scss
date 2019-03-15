@@ -1,0 +1,9 @@
+.nglp-hero {
+  height: 500px;
+  display: flex;
+  align-items: center;
+  background: center/cover;
+  &__wrap {
+    width: 100%;
+  }
+}

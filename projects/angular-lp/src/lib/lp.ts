@@ -20,11 +20,13 @@ export interface Service {
 export interface Media {
   name: string;
   logoURL: string;
+  website?: string;
 }
 
 export interface Conversion {
   label: string;
   url: string;
+  lead: string;
 }
 
 export interface Price {
@@ -40,12 +42,25 @@ export interface Contributor {
 }
 
 export interface Concept {
-  text: string;
+  body: string;
 }
 
 export interface Menu {
   label: string;
   url: string;
+}
+
+export interface Faq {
+  question: string;
+  answer: string;
+}
+
+export interface Hero {
+  mainText: string;
+  subText?: string;
+  actionLabel?: string;
+  actionURL?: string;
+  coverURL?: string;
 }
 
 export interface Organization {
@@ -65,23 +80,19 @@ export interface Organization {
 
 export interface Lp {
   title: string;
-  description: string;
-  menues: Menu[];
+  owner: string;
+  menues?: Menu[];
   contents: {
-    hero: {
-      mainText: string;
-      subText: string;
-      actionLabel: string;
-      actionURL: string;
-    };
-    concept: Concept;
-    media: Media[];
-    voices: Voice[];
-    features: Feature[];
-    services: Service[];
-    organization: Organization;
-    conversion: Conversion;
-    pricing: Price[];
-    contributor: Contributor[];
+    hero: Hero;
+    concept?: Concept;
+    medias?: Media[];
+    voices?: Voice[];
+    features?: Feature[];
+    services?: Service[];
+    organization?: Organization;
+    conversion?: Conversion;
+    pricing?: Price[];
+    contributor?: Contributor[];
+    faqs: Faq[];
   };
 }

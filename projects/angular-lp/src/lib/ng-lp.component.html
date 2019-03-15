@@ -2,7 +2,10 @@
   <header class="nglp-header">
     <div class="nglp-container">
       <div class="nglp-header__wrap">
-        <h1 class="nglp-header__logo">{{data.title}}</h1>
+        <h1 class="nglp-header__logo">
+          <img src="" [alt]="data.title" *ngIf="data.logoURL">
+          <span *ngIf="!data.logoURL">{{data.title}}</span>
+        </h1>
         <ul class="nglp-menu">
           <li class="nglp-menu__item" *ngFor="let menu of data.menues">
             <a [href]="menu.url">{{menu.label}}</a>
@@ -12,11 +15,101 @@
     </div>
   </header>
 
-  <div class="nglp-hero">
-    <div class="nglp-container">
-      <p *ngIf="data.contents.hero.mainText" class="nglp-hero__main-text">{{data.contents.hero.mainText}}</p>
-      <p *ngIf="data.contents.hero.subText" class="nglp-hero__sub-text">{{data.contents.hero.subText}}</p>
-      <a *ngIf="data.contents.hero.actionLabel" [href]="data.contents.hero.actionURL" class="nglp-btn">{{data.contents.hero.actionLabel}}</a>
+  <section *ngIf="data.contents.hero" class="nglp-hero" [style.background-image]="'url(' + data.contents.hero.coverURL + ')' | safe:'style'">
+    <div class="nglp-hero__wrap">
+      <div class="nglp-container">
+        <p *ngIf="data.contents.hero.mainText" class="nglp-hero__main-text">{{data.contents.hero.mainText}}</p>
+        <p *ngIf="data.contents.hero.subText" class="nglp-hero__sub-text">{{data.contents.hero.subText}}</p>
+        <a *ngIf="data.contents.hero.actionLabel" [href]="data.contents.hero.actionURL" class="nglp-btn">{{data.contents.hero.actionLabel}}</a>
+      </div>
     </div>
-  </div>
+  </section>
+
+  <section class="nglp-section" *ngIf="data.contents.concept">
+    <div class="nglp-container">
+      <div class="nglp-concept">
+        <p>{{data.contents.concept.body}}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="nglp-section" *ngIf="data.contents.features">
+    <div class="nglp-container">
+      <h2 class="nglp-hdg">特徴</h2>
+      <div class="nglp-grid nglp-grid--4">
+        <div class="nglp-feature" *ngFor="let feature of data.contents.features">
+          <figure class="nglp-feature__thumbnail" [style.background-image]="'url(' + feature.imageURL + ')' | safe:'style'"></figure>
+          <h3 class="nglp-feature__title">{{feature.title}}</h3>
+          <p class="nglp-feature__description">{{feature.description}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="nglp-section" *ngIf="data.contents.services">
+    <div class="nglp-container">
+      <h2 class="nglp-hdg">サービス</h2>
+      <div class="nglp-grid nglp-grid--4">
+        <div class="nglp-service" *ngFor="let service of data.contents.services">
+          <figure class="nglp-service__thumbnail" [style.background-image]="'url(' + service.imageURL + ')' | safe:'style'"></figure>
+          <h3 class="nglp-service__title">{{service.title}}</h3>
+          <p class="nglp-service__description">{{service.description}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="nglp-section" *ngIf="data.contents.faqs">
+    <div class="nglp-container">
+      <h2 class="nglp-hdg">Q&A</h2>
+      <div class="nglp-grid nglp-grid--2">
+        <dl class="nglp-faq" *ngFor="let faq of data.contents.faqs">
+          <dt class="nglp-faq__question">{{faq.question}}</dt>
+          <dd class="nglp-faq__answer">{{faq.answer}}</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="nglp-section" *ngIf="data.contents.faqs">
+    <div class="nglp-container">
+      <div class="nglp-grid nglp-grid--4">
+        <div class="nglp-media" *ngFor="let media of data.contents.medias">
+          <a href="" *ngIf="media.website">
+            <img [src]="media.logoURL" [alt]="media.name">
+          </a>
+          <img *ngIf="!media.website" [src]="media.logoURL" [alt]="media.name">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="nglp-section" *ngIf="data.contents.voices">
+    <div class="nglp-container">
+      <h2 class="nglp-hdg">ユーザーボイス</h2>
+      <div class="nglp-grid nglp-grid--3">
+        <div class="nglp-voice" *ngFor="let voice of data.contents.voices">
+          <figure class="nglp-voice__thumbnail" [style.background-image]="'url(' + voice.photoURL + ')' | safe:'style'"></figure>
+          <div class="nglp-voice__body">
+            <p class="nglp-voice__name">{{voice.name}}</p>
+            <p class="nglp-voice__position">{{voice.position}}</p>
+            <p class="nglp-voice__comment">{{voice.comment}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section *ngIf="data.contents.conversion as conversion">
+    <p *ngIf="conversion.lead">{{conversion.lead}}</p>
+    <div>
+      <a [href]="conversion.url" class="btn">{{conversion.label}}</a>
+    </div>
+  </section>
 </ng-container>
+
+<footer class="nglp-footer">
+  <div class="nglp-container">
+    <p><small>&copy; {{data.owner}}</small></p>
+  </div>
+</footer>

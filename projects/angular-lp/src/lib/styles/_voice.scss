@@ -1,0 +1,26 @@
+.nglp-voice {
+  display: flex;
+  &__thumbnail {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: center/cover;
+    margin-right: 16px;
+  }
+  &__body {
+    flex: 1;
+  }
+  &__name {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  &__position {
+    color: rgba(black, .6);
+    margin-bottom: 16px;
+    font-size: 13px;
+  }
+  &__comment {
+    line-height: 1.6;
+  }
+}

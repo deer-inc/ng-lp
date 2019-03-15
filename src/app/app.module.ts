@@ -6,7 +6,7 @@ import { NgLpModule } from 'projects/angular-lp/src/public_api';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
