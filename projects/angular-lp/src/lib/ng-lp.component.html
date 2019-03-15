@@ -110,11 +110,32 @@
     </div>
   </section>
 
-  <section *ngIf="data.contents.conversion as conversion">
+  <section class="nglp-section" *ngIf="data.contents.conversion as conversion">
     <p *ngIf="conversion.lead">{{conversion.lead}}</p>
     <div>
       <a [href]="conversion.url" class="btn">{{conversion.label}}</a>
     </div>
+  </section>
+
+  <section class="nglp-section" *ngIf="data.account as account">
+    <h2 class="nglp-hdg">FOLLOW</h2>
+    <ul class="nglp-follow">
+      <li class="nglp-follow__item" *ngIf="account.gitHub">
+        <a [href]="account.gitHub" target="_blank">
+          <fa-icon [icon]="faGithub"></fa-icon>
+        </a>
+      </li>
+      <li *ngIf="account.twitter">
+        <a [href]="account.twitter" target="_blank">
+          <fa-icon [icon]="faTwitter"></fa-icon>
+        </a>
+      </li>
+      <li *ngIf="account.facebook">
+        <a [href]="account.facebook" target="_blank">
+          <fa-icon [icon]="faFacebook"></fa-icon>
+        </a>
+      </li>
+    </ul>
   </section>
 </ng-container>
 

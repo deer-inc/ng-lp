@@ -12,6 +12,9 @@ export class AppComponent {
   data: Lp = {
     title: 'NGLP',
     owner: 'Deer, Inc',
+    account: {
+      gitHub: 'xxx'
+    },
     contents: {
       hero: {
         mainText: faker.lorem.sentence(4),
@@ -34,9 +37,6 @@ export class AppComponent {
         }
       ],
       voices: this.getVoices(6),
-      account: {
-        gitHub: 'xxx'
-      }
     }
   };
 

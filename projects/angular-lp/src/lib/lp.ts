@@ -88,8 +88,8 @@ export interface Account {
 export interface Lp {
   title: string;
   owner: string;
+  account?: Account;
   contents: {
-    account?: Account;
     hero: Hero;
     concept?: Concept;
     medias?: Media[];
