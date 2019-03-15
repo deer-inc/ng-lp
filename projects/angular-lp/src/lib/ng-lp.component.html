@@ -10,6 +10,12 @@
           <li class="nglp-menu__item" *ngFor="let menu of data.menues">
             <a [href]="menu.url">{{menu.label}}</a>
           </li>
+          <li *ngIf="data.account?.gitHub" class="nglp-menu__item">
+            <a [href]="data.account?.gitHub" target="_blank">
+              <fa-icon [icon]="faGithub"></fa-icon>
+              GitHub
+            </a>
+          </li>
         </ul>
       </div>
     </div>
@@ -114,6 +120,17 @@
 
 <footer class="nglp-footer">
   <div class="nglp-container">
+    <ul class="nglp-footer-accounts" *ngIf="data.account">
+      <li *ngIf="data.account.gitHub" class="nglp-footer-accounts__item">
+        <a [href]="data.account.gitHub" target="_blank"><fa-icon [icon]="faGithub"></fa-icon></a>
+      </li>
+      <li *ngIf="data.account.facebook" class="nglp-footer-accounts__item">
+        <a [href]="data.account.facebook" target="_blank"><fa-icon [icon]="faFacebook"></fa-icon></a>
+      </li>
+      <li *ngIf="data.account.twitter" class="nglp-footer-accounts__item">
+        <a [href]="data.account.twitter" target="_blank"><fa-icon [icon]="faTwitter"></fa-icon></a>
+      </li>
+    </ul>
     <p class="nglp-footer__logo">
       <img *ngIf="data.logoURL" [src]="data.logoURL" alt="data.title">
       <span *ngIf="!data.logoURL">{{data.title}}</span>

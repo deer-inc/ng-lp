@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Lp, Voice, Feature, Service } from 'projects/angular-lp/src/lib/lp';
+import { Lp, Voice, Feature, Service, Media } from 'projects/angular-lp/src/lib/lp';
 
 import * as faker from 'faker/locale/ja';
 
@@ -12,12 +12,6 @@ export class AppComponent {
   data: Lp = {
     title: 'NGLP',
     owner: 'Deer, Inc',
-    menues: [
-      {
-        label: 'GitHub',
-        url: 'https://xxx.com'
-      }
-    ],
     contents: {
       hero: {
         mainText: faker.lorem.sentence(4),
@@ -32,55 +26,17 @@ export class AppComponent {
       },
       features: this.getFeatures(8),
       services: this.getServices(8),
-      medias: [
-        {
-          name: 'aaa',
-          logoURL: 'https://dummyimage.com/300x100.png',
-          website: ''
-        },
-        {
-          name: 'aaa',
-          logoURL: 'https://dummyimage.com/300x100.png',
-          website: ''
-        },
-        {
-          name: 'aaa',
-          logoURL: 'https://dummyimage.com/300x100.png',
-          website: ''
-        },
-        {
-          name: 'aaa',
-          logoURL: 'https://dummyimage.com/300x100.png',
-          website: ''
-        },
-        {
-          name: 'aaa',
-          logoURL: 'https://dummyimage.com/300x100.png',
-          website: ''
-        },
-        {
-          name: 'aaa',
-          logoURL: 'https://dummyimage.com/300x100.png',
-          website: ''
-        },
-        {
-          name: 'aaa',
-          logoURL: 'https://dummyimage.com/300x100.png',
-          website: ''
-        },
-        {
-          name: 'aaa',
-          logoURL: 'https://dummyimage.com/300x100.png',
-          website: ''
-        },
-      ],
+      medias: this.getMedias(8),
       faqs: [
         {
           question: '入力したデータはデータベースに保存されますか？',
           answer: 'されません。ローカルストレージで管理されます。',
         }
       ],
-      voices: this.getVoices(6)
+      voices: this.getVoices(6),
+      account: {
+        gitHub: 'xxx'
+      }
     }
   };
 
@@ -116,6 +72,18 @@ export class AppComponent {
         imageURL: faker.image.image(),
         title: faker.lorem.words(3),
         description: faker.lorem.sentence(),
+      });
+    }
+    return result;
+  }
+
+  getMedias(count: number): Media[] {
+    const result = [];
+    while (count--) {
+      result.push({
+        name: 'aaa',
+        logoURL: 'https://dummyimage.com/300x100.png',
+        website: ''
       });
     }
     return result;

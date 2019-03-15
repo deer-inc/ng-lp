@@ -79,11 +79,17 @@ export interface Organization {
   };
 }
 
+export interface Account {
+  gitHub?: string;
+  twitter?: string;
+  facebook?: string;
+}
+
 export interface Lp {
   title: string;
   owner: string;
-  menues?: Menu[];
   contents: {
+    account?: Account;
     hero: Hero;
     concept?: Concept;
     medias?: Media[];

@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { Lp } from './lp';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'ng-lp',
@@ -10,6 +11,8 @@ import { Lp } from './lp';
 export class NgLpComponent implements OnInit {
 
   @Input() data: Lp;
+
+  faGithub = faGithub;
 
   constructor() { }
 

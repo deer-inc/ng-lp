@@ -13,3 +13,16 @@
     letter-spacing: 2px;
   }
 }
+
+.nglp-menu {
+  display: flex;
+  &__item a {
+    padding: 0 16px;
+    .ng-fa-icon {
+      font-size: 24px;
+      vertical-align: -4px;
+      margin-right: 8px;
+      display: inline-block;
+    }
+  }
+}
