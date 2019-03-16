@@ -36,14 +36,14 @@ export class AppComponent {
       },
       features: [
         {
-          imageURL: faker.image.image(),
+          imageURL: './assets/octocat.png',
           title: 'オープンソース',
           description: 'NGLPはオープンソース(OSS)です。PRは常に歓迎されています。バグや要望があれば気軽にIssueを立ててください。',
           actionLabel: 'GitHubリポジトリ',
           actionURL: 'https://github.com/deer-inc/ng-lp'
         },
         {
-          imageURL: faker.image.image(),
+          imageURL: './assets/octocat.png',
           title: 'MITライセンス',
           description: 'MITライセンスなので商用利用はもちろん、自由に複製、改変をすることができます。もちろん無料です。',
         },
@@ -53,7 +53,7 @@ export class AppComponent {
           description: 'メインビジュアル、ユーザーボイス、メディア掲載、特徴やコンセプトなど頻出セクションを網羅しています。',
         },
         {
-          imageURL: faker.image.image(),
+          imageURL: './assets/material.png',
           title: 'マテリアルデザイン',
           description: 'マテリアルデザインとWeb標準に沿ったRWD設計なので、高い閲覧性が担保されています。',
         },

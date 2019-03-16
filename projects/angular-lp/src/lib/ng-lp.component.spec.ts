@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NgLpComponent } from './ng-lp.component';
+import { SafePipeModule } from 'safe-pipe';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 describe('AngularLpComponent', () => {
   let component: NgLpComponent;
@@ -8,7 +10,11 @@ describe('AngularLpComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NgLpComponent ]
+      declarations: [ NgLpComponent ],
+      imports: [
+        SafePipeModule,
+        FontAwesomeModule
+      ]
     })
     .compileComponents();
   }));
