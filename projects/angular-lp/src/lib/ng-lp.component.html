@@ -1,4 +1,4 @@
-<ng-container *ngIf="data">
+<div class="nglp-root" *ngIf="data">
   <header class="nglp-header">
     <div class="nglp-container">
       <div class="nglp-header__wrap">
@@ -8,7 +8,7 @@
         </h1>
         <ul class="nglp-menu">
           <li class="nglp-menu__item" *ngFor="let menu of data.menues">
-            <a [href]="menu.url">{{menu.label}}</a>
+            <a [href]="menu.url" target="_blank">{{menu.label}}</a>
           </li>
           <li *ngIf="data.account?.gitHub" class="nglp-menu__item">
             <a [href]="data.account?.gitHub" target="_blank">
@@ -26,14 +26,21 @@
       <div class="nglp-container">
         <p *ngIf="data.contents.hero.mainText" class="nglp-hero__main-text">{{data.contents.hero.mainText}}</p>
         <p *ngIf="data.contents.hero.subText" class="nglp-hero__sub-text">{{data.contents.hero.subText}}</p>
-        <a *ngIf="data.contents.hero.actionLabel" [href]="data.contents.hero.actionURL" class="nglp-btn nglp-btn--white">{{data.contents.hero.actionLabel}}</a>
+        <ng-container *ngIf="data.contents.hero.actionLabel">
+          <a *ngIf="data.contents.hero.actionURL" target="_blank" [href]="data.contents.hero.actionURL" class="nglp-btn nglp-btn--white">
+            {{data.contents.hero.actionLabel}}
+          </a>
+          <button *ngIf="!data.contents.hero.actionURL" (click)="action()" class="nglp-btn nglp-btn--white">
+            {{data.contents.hero.actionLabel}}
+          </button>
+        </ng-container>
       </div>
     </div>
   </section>
 
   <section class="nglp-section" *ngIf="data.contents.concept as concept">
     <div class="nglp-container">
-      <div class="nglp-concept">
+      <div class="nglp-concept" [class.nglp-concept--single]="!concept.clipURL">
         <figure *ngIf="concept.clipURL" class="nglp-concept__image">
           <img [src]="concept.clipURL" alt="">
         </figure>
@@ -146,25 +153,25 @@
       </li>
     </ul>
   </section>
-</ng-container>
 
-<footer class="nglp-footer">
-  <div class="nglp-container">
-    <ul class="nglp-footer-accounts" *ngIf="data.account">
-      <li *ngIf="data.account.gitHub" class="nglp-footer-accounts__item">
-        <a [href]="data.account.gitHub" target="_blank"><fa-icon [icon]="faGithub"></fa-icon></a>
-      </li>
-      <li *ngIf="data.account.facebook" class="nglp-footer-accounts__item">
-        <a [href]="data.account.facebook" target="_blank"><fa-icon [icon]="faFacebook"></fa-icon></a>
-      </li>
-      <li *ngIf="data.account.twitter" class="nglp-footer-accounts__item">
-        <a [href]="data.account.twitter" target="_blank"><fa-icon [icon]="faTwitter"></fa-icon></a>
-      </li>
-    </ul>
-    <p class="nglp-footer__logo">
-      <img *ngIf="data.logoURL" [src]="data.logoURL" alt="data.title">
-      <span *ngIf="!data.logoURL">{{data.title}}</span>
-    </p>
-    <p class="nglp-footer__copyright"><small>&copy; {{data.owner}}</small></p>
-  </div>
-</footer>
+  <footer class="nglp-footer">
+    <div class="nglp-container">
+      <ul class="nglp-footer-accounts" *ngIf="data.account">
+        <li *ngIf="data.account.gitHub" class="nglp-footer-accounts__item">
+          <a [href]="data.account.gitHub" target="_blank"><fa-icon [icon]="faGithub"></fa-icon></a>
+        </li>
+        <li *ngIf="data.account.facebook" class="nglp-footer-accounts__item">
+          <a [href]="data.account.facebook" target="_blank"><fa-icon [icon]="faFacebook"></fa-icon></a>
+        </li>
+        <li *ngIf="data.account.twitter" class="nglp-footer-accounts__item">
+          <a [href]="data.account.twitter" target="_blank"><fa-icon [icon]="faTwitter"></fa-icon></a>
+        </li>
+      </ul>
+      <p class="nglp-footer__logo">
+        <img *ngIf="data.logoURL" [src]="data.logoURL" alt="data.title">
+        <span *ngIf="!data.logoURL">{{data.title}}</span>
+      </p>
+      <p class="nglp-footer__copyright"><small>&copy; {{data.owner}}</small></p>
+    </div>
+  </footer>
+</div>

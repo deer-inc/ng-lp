@@ -5,6 +5,12 @@ export interface Voice {
   comment: string;
 }
 
+export interface Menu {
+  label: string;
+  url: string;
+}
+
+
 export interface Feature {
   imageURL: string;
   title: string;
@@ -92,6 +98,7 @@ export interface Lp {
   title: string;
   owner: string;
   account?: Account;
+  menues?: Menu[];
   contents: {
     hero: Hero;
     concept?: Concept;

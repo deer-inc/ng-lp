@@ -1,7 +1,11 @@
 .nglp-faq {
   &__question {
     font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+  &__answer {
     font-size: 16px;
-    margin-bottom: 16px;
+    color: rgba(black, .6);
   }
 }

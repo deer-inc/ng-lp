@@ -2,12 +2,14 @@
   margin: 0 auto;
   display: flex;
   align-items: center;
+  justify-content: center;
+  max-width: 800px;
   &__image {
-    width: 600px;
     text-align: center;
+    padding-right: 40px;
     img {
       max-width: 450px;
-      max-height: 400px;
+      max-height: 320px;
     }
   }
   &__body {
@@ -16,11 +18,15 @@
   &__title {
     font-size: 32px;
     margin-bottom: 24px;
-    line-height: 1.4;
+    font-weight: bold;
+    line-height: 1.6;
   }
   &__description {
     line-height: 32px;
     font-size: 16px;
-    color: rgba(black, .6);
+    letter-spacing: 2px;
+  }
+  &--single {
+    text-align: center;
   }
 }

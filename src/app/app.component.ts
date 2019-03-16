@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Lp, Voice, Feature, Service, Media } from 'projects/angular-lp/src/lib/lp';
+import { Lp, Voice, Feature } from 'projects/angular-lp/src/lib/lp';
 
 import * as faker from 'faker/locale/ja';
 
@@ -16,13 +16,18 @@ export class AppComponent {
       gitHub: 'https://github.com/deer-inc/ng-lp',
       twitter: 'https://twitter.com/d151005'
     },
+    menues: [
+      {
+        label: 'ドキュメント',
+        url: 'https://github.com/deer-inc/ng-lp/wiki'
+      }
+    ],
     contents: {
       hero: {
         mainText: 'データをわたせば、できあがり。',
         subText: '５分でLPが作れる、Angularライブラリ',
-        actionLabel: 'はじめる',
-        actionURL: 'xxx',
-        coverURL: './assets/hero.svg'
+        actionLabel: 'デモを見る',
+        coverURL: './assets/hero.jpg'
       },
       concept: {
         title: 'モダンなLPをサクッと作りたいあなたに',
@@ -77,9 +82,21 @@ export class AppComponent {
       ],
       faqs: [
         {
-          question: '入力したデータはデータベースに保存されますか？',
-          answer: 'されません。ローカルストレージで管理されます。',
-        }
+          question: 'Pull Requestは受け付けていますか？',
+          answer: 'はい。Pull Request以外に、機能追加の要望やバグ報告のIssueも大歓迎です 🥳',
+        },
+        {
+          question: 'どんな外部リソースに依存していますか？',
+          answer: '現時点ではFontAwesomeやGoogle Noto Sansのみです。',
+        },
+        {
+          question: 'テンプレートは増やせますか？',
+          answer: 'はい。新しいデザインテンプレートだけでなくセクションの追加やデザインテンプレートのブラッシュアップも大歓迎です。',
+        },
+        {
+          question: 'どういうシーンで使うものですか？',
+          answer: '特にAngularでOSSやMVPを作ったとき、その入り口となるLPが必要になります。HTML, CSSコーディングをしなくてもそれがサクッと作れるようにNGLPを作りました。',
+        },
       ],
       voices: this.getVoices(6),
     }
@@ -98,15 +115,7 @@ export class AppComponent {
     return result;
   }
 
-  getFeatures(count: number): Feature[] {
-    const result = [];
-    while (count--) {
-      result.push({
-        imageURL: faker.image.image(),
-        title: faker.lorem.words(3),
-        description: faker.lorem.sentence(),
-      });
-    }
-    return result;
+  action() {
+    // ...
   }
 }

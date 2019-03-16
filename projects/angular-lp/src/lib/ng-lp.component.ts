@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation, Output, EventEmitter } from '@angular/core';
 import { Lp } from './lp';
 import {
   faGithub,
@@ -10,10 +10,10 @@ import {
   selector: 'ng-lp',
   templateUrl: './ng-lp.component.html',
   styleUrls: ['./ng-lp.component.scss'],
-  encapsulation: ViewEncapsulation.None,
 })
 export class NgLpComponent implements OnInit {
 
+  @Output() handleClickAction: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Input() data: Lp;
 
   faGithub = faGithub;
@@ -23,6 +23,10 @@ export class NgLpComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  action() {
+    this.handleClickAction.emit();
   }
 
 }
