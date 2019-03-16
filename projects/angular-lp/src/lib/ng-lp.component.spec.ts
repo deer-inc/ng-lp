@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AngularLpComponent } from './angular-lp.component';
+import { NgLpComponent } from './ng-lp.component';
 
 describe('AngularLpComponent', () => {
-  let component: AngularLpComponent;
-  let fixture: ComponentFixture<AngularLpComponent>;
+  let component: NgLpComponent;
+  let fixture: ComponentFixture<NgLpComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AngularLpComponent ]
+      declarations: [ NgLpComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AngularLpComponent);
+    fixture = TestBed.createComponent(NgLpComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
