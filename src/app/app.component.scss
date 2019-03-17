@@ -1,0 +1,36 @@
+.editor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(black, .1);
+  visibility: hidden;
+  z-index: 50;
+  &.active {
+    visibility: visible;
+  }
+  &__textarea {
+    position: absolute;
+    box-shadow: 0 0 20px black;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+    transition: .2s;
+    margin: 0;
+    width: 800px;
+    height: 100%;
+    background: #272822;
+    color: #fcfcfa;
+    border: none;
+    font-size: 12px;
+    padding: 16px;
+    outline: none;
+    &.error {
+      background: pink;
+    }
+  }
+  &.active &__textarea {
+    transform: translateX(0);
+  }
+}

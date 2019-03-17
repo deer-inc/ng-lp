@@ -159,7 +159,7 @@ handleClickAction|メインビジュアルのボタンをクリックしたら�
 ## 開発
 
 ```
-ng build ng-lp
+ng build ng-lp --watch
 ng s
 ```
 

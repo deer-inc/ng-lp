@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Lp, Voice, Feature } from 'projects/ng-lp/src/lib/lp';
 
 import * as faker from 'faker/locale/ja';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,9 @@ import * as faker from 'faker/locale/ja';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+
+  isEditable: boolean;
+
   data: Lp = {
     title: 'NGLP',
     owner: 'Deer, Inc',
@@ -29,7 +33,7 @@ export class AppComponent {
       hero: {
         mainText: 'データをわたせば、できあがり。',
         subText: '５分でLPが作れる、Angularライブラリ',
-        actionLabel: 'デモを見る',
+        actionLabel: '編集してみる',
         coverURL: './assets/hero.jpg'
       },
       concept: {
@@ -110,6 +114,45 @@ export class AppComponent {
     }
   };
 
+  dataField: FormControl = new FormControl(
+    this.stringifyData()
+  );
+
+  isError: boolean;
+
+  constructor() {
+    this.dataField.valueChanges.subscribe(data => {
+      this.data = this.parseData(data);
+    });
+  }
+
+  stringifyData() {
+    let result;
+    try {
+      result = JSON.stringify(this.data, null, '    ')
+    } catch {
+      this.isError = true;
+      return '';
+    }
+    this.isError = false;
+    return result;
+  }
+
+  parseData(data) {
+    let result;
+    try {
+      result = JSON.parse(data);
+    } catch {
+      this.isError = true;
+      return {
+        title: 'データが不正です',
+        owner: 'error'
+      };
+    }
+    this.isError = false;
+    return result;
+  }
+
   getVoices(count: number): Voice[] {
     const result = [];
     while (count--) {
@@ -121,9 +164,5 @@ export class AppComponent {
       });
     }
     return result;
-  }
-
-  action() {
-    // ...
   }
 }
