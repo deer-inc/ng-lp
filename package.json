@@ -6,10 +6,11 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "pretest": "ng build angular-lp",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "gh-build": "nb build angular-lp && ng build --prod --base-href \"/ng-lp/\""
+    "gh-build": "ng build --prod --base-href \"/ng-lp/\""
   },
   "private": true,
   "dependencies": {
