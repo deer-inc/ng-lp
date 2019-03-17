@@ -12,6 +12,9 @@ export class AppComponent {
   data: Lp = {
     title: 'NGLP',
     owner: 'Deer, Inc',
+    attributions: [
+      'Free Vectors via <a target="_blank" href="https://www.vecteezy.com/">vecteezy.com</a>'
+    ],
     account: {
       gitHub: 'https://github.com/deer-inc/ng-lp',
       twitter: 'https://twitter.com/d151005'
@@ -43,12 +46,12 @@ export class AppComponent {
           actionURL: 'https://github.com/deer-inc/ng-lp'
         },
         {
-          imageURL: './assets/octocat.png',
+          imageURL: './assets/mit.png',
           title: 'MITライセンス',
           description: 'MITライセンスなので商用利用はもちろん、自由に複製、改変をすることができます。もちろん無料です。',
         },
         {
-          imageURL: faker.image.image(),
+          imageURL: './assets/blocks.svg',
           title: '豊富なセクション',
           description: 'メインビジュアル、ユーザーボイス、メディア掲載、特徴やコンセプトなど頻出セクションを網羅しています。',
         },
@@ -58,19 +61,24 @@ export class AppComponent {
           description: 'マテリアルデザインとWeb標準に沿ったRWD設計なので、高い閲覧性が担保されています。',
         },
         {
-          imageURL: faker.image.image(),
+          imageURL: './assets/customize.svg',
           title: '柔軟なカスタマイズ',
           description: 'カスタムセクションの追加やデザインカスタマイズが可能です。',
         },
         {
-          imageURL: faker.image.image(),
+          imageURL: './assets/bracket.svg',
           title: 'シンプルなインターフェイス',
           description: '決まったフォーマットでデータをバインドするだけなので、学習コストは一切必要ありません。',
         },
         {
-          imageURL: faker.image.image(),
+          imageURL: './assets/lightweight.svg',
           title: '軽量なライブラリ',
-          description: '依存ライブラリを削り、軽量なライブラリであることをテーマにしています。',
+          description: '依存ライブラリを削った軽量なライブラリなので低コストで導入できます。',
+        },
+        {
+          imageURL: './assets/shield.svg',
+          title: '堅牢なメンテナンス',
+          description: '営利企業で実際に採用されているライブラリなので、恒久的にリリース可能なクオリティでメンテナンスされます。',
         },
       ],
       medias: [

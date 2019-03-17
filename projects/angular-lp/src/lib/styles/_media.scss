@@ -10,5 +10,7 @@
   margin: 24px;
   img {
     height: 80px;
+    filter: grayscale(100%);
+    opacity: 0.32;
   }
 }

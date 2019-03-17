@@ -99,6 +99,7 @@ export interface Lp {
   owner: string;
   account?: Account;
   menues?: Menu[];
+  attributions?: string[];
   contents: {
     hero: Hero;
     concept?: Concept;
