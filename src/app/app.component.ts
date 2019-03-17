@@ -13,6 +13,14 @@ export class AppComponent {
 
   isEditable: boolean;
 
+  editorOptions = {
+    theme: 'vs-dark',
+    language: 'json',
+    minimap: {
+      enabled: false
+    }
+  };
+
   data: Lp = {
     title: 'NGLP',
     owner: 'Deer, Inc',
@@ -118,8 +126,6 @@ export class AppComponent {
     this.stringifyData()
   );
 
-  isError: boolean;
-
   constructor() {
     this.dataField.valueChanges.subscribe(data => {
       this.data = this.parseData(data);
@@ -129,12 +135,10 @@ export class AppComponent {
   stringifyData() {
     let result;
     try {
-      result = JSON.stringify(this.data, null, '    ')
+      result = JSON.stringify(this.data, null, '    ');
     } catch {
-      this.isError = true;
       return '';
     }
-    this.isError = false;
     return result;
   }
 
@@ -143,13 +147,11 @@ export class AppComponent {
     try {
       result = JSON.parse(data);
     } catch {
-      this.isError = true;
       return {
         title: 'データが不正です',
         owner: 'error'
       };
     }
-    this.isError = false;
     return result;
   }
 

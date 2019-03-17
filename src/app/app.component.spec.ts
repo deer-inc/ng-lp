@@ -2,6 +2,7 @@ import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { NgLpModule } from 'projects/ng-lp/src/public_api';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MonacoEditorModule } from 'ngx-monaco-editor';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -11,7 +12,8 @@ describe('AppComponent', () => {
       ],
       imports: [
         NgLpModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        MonacoEditorModule.forRoot()
       ]
     }).compileComponents();
   }));

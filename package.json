@@ -26,6 +26,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.7.2",
     "core-js": "^2.5.4",
     "faker": "^4.1.0",
+    "ngx-monaco-editor": "^7.0.0",
     "rxjs": "~6.3.3",
     "safe-pipe": "^0.3.0",
     "tslib": "^1.9.0",

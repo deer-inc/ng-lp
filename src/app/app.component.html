@@ -1,5 +1,7 @@
 <ng-lp (handleClickAction)="isEditable = true" [data]="data"></ng-lp>
 
 <div class="editor" [class.active]="isEditable" (click)="isEditable = false">
-  <textarea [class.error]="isError" placeholder="off" (click)="$event.stopPropagation()" [formControl]="dataField" class="editor__textarea"></textarea>
+  <div class="editor__textarea" (click)="$event.stopPropagation()">
+    <ngx-monaco-editor [options]="editorOptions" [formControl]="dataField"></ngx-monaco-editor>
+  </div>
 </div>

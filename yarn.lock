@@ -4725,6 +4725,13 @@ ng-packagr@^4.2.0:
     uglify-js "^3.0.7"
     update-notifier "^2.3.0"
 
+ngx-monaco-editor@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/ngx-monaco-editor/-/ngx-monaco-editor-7.0.0.tgz#3c422502def5c5ff0771a4ff518352d0215de698"
+  integrity sha512-vzPXTgeZEuRapuiANtrUjNCMdU5MmsJvQVyKgZS042VdXayAn6gPxvIVQp4ipUzX5JzVOfjkL2t+s9+ihMT5Eg==
+  dependencies:
+    tslib "^1.9.0"
+
 nice-try@^1.0.4:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/nice-try/-/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"
