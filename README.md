@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.com/deer-inc/ng-lp.svg?branch=master)](https://travis-ci.com/deer-inc/ng-lp)
+[![Coverage Status](https://coveralls.io/repos/github/deer-inc/ng-lp/badge.svg?branch=master)](https://coveralls.io/github/deer-inc/ng-lp?branch=master)
+![GitHub](https://img.shields.io/github/license/deer-inc/ng-lp.svg)
+
 # NgLp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.3.
