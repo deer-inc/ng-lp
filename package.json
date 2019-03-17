@@ -2,6 +2,7 @@
   "name": "ng-lp",
   "version": "0.0.0",
   "scripts": {
+    "postinstall": "cd projects/angular-lp && npm install",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
