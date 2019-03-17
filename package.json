@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "gh-build": "ng build --prod --base-href \"/ng-lp/\""
+    "gh-build": "nb build angular-lp && ng build --prod --base-href \"/ng-lp/\""
   },
   "private": true,
   "dependencies": {
