@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ng-lp",
+            "outputPath": "dist/ng-lp-manager",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ng-lp:build"
+            "browserTarget": "ng-lp-manager:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ng-lp:build:production"
+              "browserTarget": "ng-lp-manager:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ng-lp:build"
+            "browserTarget": "ng-lp-manager:build"
           }
         },
         "test": {
@@ -107,7 +107,7 @@
         }
       }
     },
-    "ng-lp-e2e": {
+    "ng-lp-manager-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -116,11 +116,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ng-lp:serve"
+            "devServerTarget": "ng-lp-manager:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ng-lp:serve:production"
+              "devServerTarget": "ng-lp-manager:serve:production"
             }
           }
         },
@@ -171,5 +171,5 @@
       }
     }
   },
-  "defaultProject": "ng-lp"
+  "defaultProject": "ng-lp-manager"
 }
