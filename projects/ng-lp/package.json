@@ -5,6 +5,10 @@
     "@angular/common": "^7.2.0",
     "@angular/core": "^7.2.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/deer-inc/ng-lp"
+  },
   "dependencies": {
     "@fortawesome/angular-fontawesome": "^0.3.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.15",

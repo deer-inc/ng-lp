@@ -5,12 +5,6 @@ export interface Voice {
   comment: string;
 }
 
-export interface Menu {
-  label: string;
-  url: string;
-}
-
-
 export interface Feature {
   imageURL: string;
   title: string;
