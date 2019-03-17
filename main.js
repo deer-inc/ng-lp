@@ -139,7 +139,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ng-lp (handleClickAction)=\"action()\" [data]=\"data\"></ng-lp>\n\n\n"
+module.exports = "<ng-lp (handleClickAction)=\"isEditable = true\" [data]=\"data\"></ng-lp>\n\n<div class=\"editor\" [class.active]=\"isEditable\" (click)=\"isEditable = false\">\n  <div class=\"editor__textarea\" (click)=\"$event.stopPropagation()\">\n    <ngx-monaco-editor [options]=\"editorOptions\" [formControl]=\"dataField\"></ngx-monaco-editor>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -150,7 +150,7 @@ module.exports = "<ng-lp (handleClickAction)=\"action()\" [data]=\"data\"></ng-l
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuc2NzcyJ9 */"
+module.exports = ".editor {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background: rgba(0, 0, 0, 0.1);\n  visibility: hidden;\n  z-index: 50; }\n  .editor.active {\n    visibility: visible; }\n  .editor__textarea {\n    position: absolute;\n    box-shadow: 0 0 20px black;\n    top: 0;\n    right: 0;\n    -webkit-transform: translateX(100%);\n            transform: translateX(100%);\n    transition: .2s;\n    width: 800px;\n    height: 100%;\n    border: none; }\n  .editor.active .editor__textarea {\n    -webkit-transform: translateX(0);\n            transform: translateX(0); }\n  ngx-monaco-editor {\n  height: 100%; }\n  ngx-monaco-editor ::ng-deep .editor-container {\n    height: 100%; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3RyYXZpcy9idWlsZC9kZWVyLWluYy9uZy1scC9zcmMvYXBwL2FwcC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGVBQWU7RUFDZixNQUFNO0VBQ04sT0FBTztFQUNQLFdBQVc7RUFDWCxZQUFZO0VBQ1osOEJBQXNCO0VBQ3RCLGtCQUFrQjtFQUNsQixXQUFXLEVBQUE7RUFSYjtJQVVJLG1CQUFtQixFQUFBO0VBRXJCO0lBQ0Usa0JBQWtCO0lBQ2xCLDBCQUEwQjtJQUMxQixNQUFNO0lBQ04sUUFBUTtJQUNSLG1DQUEyQjtZQUEzQiwyQkFBMkI7SUFDM0IsZUFBZTtJQUNmLFlBQVk7SUFDWixZQUFZO0lBQ1osWUFBWSxFQUFBO0VBckJoQjtJQXdCSSxnQ0FBd0I7WUFBeEIsd0JBQXdCLEVBQUE7RUFJNUI7RUFDRSxZQUFZLEVBQUE7RUFEZDtJQUdJLFlBQVksRUFBQSIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5lZGl0b3Ige1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIHRvcDogMDtcbiAgbGVmdDogMDtcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogMTAwJTtcbiAgYmFja2dyb3VuZDogcmdiYShibGFjaywgLjEpO1xuICB2aXNpYmlsaXR5OiBoaWRkZW47XG4gIHotaW5kZXg6IDUwO1xuICAmLmFjdGl2ZSB7XG4gICAgdmlzaWJpbGl0eTogdmlzaWJsZTtcbiAgfVxuICAmX190ZXh0YXJlYSB7XG4gICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgIGJveC1zaGFkb3c6IDAgMCAyMHB4IGJsYWNrO1xuICAgIHRvcDogMDtcbiAgICByaWdodDogMDtcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoMTAwJSk7XG4gICAgdHJhbnNpdGlvbjogLjJzO1xuICAgIHdpZHRoOiA4MDBweDtcbiAgICBoZWlnaHQ6IDEwMCU7XG4gICAgYm9yZGVyOiBub25lO1xuICB9XG4gICYuYWN0aXZlICZfX3RleHRhcmVhIHtcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoMCk7XG4gIH1cbn1cblxubmd4LW1vbmFjby1lZGl0b3Ige1xuICBoZWlnaHQ6IDEwMCU7XG4gIDo6bmctZGVlcCAuZWRpdG9yLWNvbnRhaW5lciB7XG4gICAgaGVpZ2h0OiAxMDAlO1xuICB9XG59XG4iXX0= */"
 
 /***/ }),
 
@@ -168,11 +168,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var faker_locale_ja__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! faker/locale/ja */ "./node_modules/faker/locale/ja.js");
 /* harmony import */ var faker_locale_ja__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(faker_locale_ja__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+
 
 
 
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
+        var _this = this;
+        this.editorOptions = {
+            theme: 'vs-dark',
+            language: 'json',
+            minimap: {
+                enabled: false
+            }
+        };
         this.data = {
             title: 'NGLP',
             owner: 'Deer, Inc',
@@ -193,7 +203,7 @@ var AppComponent = /** @class */ (function () {
                 hero: {
                     mainText: 'データをわたせば、できあがり。',
                     subText: '５分でLPが作れる、Angularライブラリ',
-                    actionLabel: 'デモを見る',
+                    actionLabel: '編集してみる',
                     coverURL: './assets/hero.jpg'
                 },
                 concept: {
@@ -273,7 +283,34 @@ var AppComponent = /** @class */ (function () {
                 voices: this.getVoices(6),
             }
         };
+        this.dataField = new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](this.stringifyData());
+        this.dataField.valueChanges.subscribe(function (data) {
+            _this.data = _this.parseData(data);
+        });
     }
+    AppComponent.prototype.stringifyData = function () {
+        var result;
+        try {
+            result = JSON.stringify(this.data, null, '    ');
+        }
+        catch (_a) {
+            return '';
+        }
+        return result;
+    };
+    AppComponent.prototype.parseData = function (data) {
+        var result;
+        try {
+            result = JSON.parse(data);
+        }
+        catch (_a) {
+            return {
+                title: 'データが不正です',
+                owner: 'error'
+            };
+        }
+        return result;
+    };
     AppComponent.prototype.getVoices = function (count) {
         var result = [];
         while (count--) {
@@ -286,15 +323,13 @@ var AppComponent = /** @class */ (function () {
         }
         return result;
     };
-    AppComponent.prototype.action = function () {
-        // ...
-    };
     AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-root',
             template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html"),
             styles: [__webpack_require__(/*! ./app.component.scss */ "./src/app/app.component.scss")]
-        })
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], AppComponent);
     return AppComponent;
 }());
@@ -317,7 +352,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var ng_lp__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ng-lp */ "./dist/ng-lp/fesm5/deer-inc-ng-lp.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var ng_lp__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ng-lp */ "./dist/ng-lp/fesm5/deer-inc-ng-lp.js");
+/* harmony import */ var ngx_monaco_editor__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ngx-monaco-editor */ "./node_modules/ngx-monaco-editor/fesm5/ngx-monaco-editor.js");
+
+
 
 
 
@@ -333,7 +372,9 @@ var AppModule = /** @class */ (function () {
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
-                ng_lp__WEBPACK_IMPORTED_MODULE_4__["NgLpModule"]
+                ng_lp__WEBPACK_IMPORTED_MODULE_5__["NgLpModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ReactiveFormsModule"],
+                ngx_monaco_editor__WEBPACK_IMPORTED_MODULE_6__["MonacoEditorModule"].forRoot()
             ],
             providers: [],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
