@@ -1,16 +1,16 @@
 {
-  "name": "ng-lp",
+  "name": "ng-lp-manager",
   "version": "0.0.0",
   "scripts": {
-    "postinstall": "cd projects/angular-lp && npm install",
+    "postinstall": "cd projects/ng-lp && npm install",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "pretest": "ng build angular-lp",
+    "pretest": "ng build ng-lp",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "gh-build": "ng build --prod --base-href \"/ng-lp/\""
+    "gh-build": "ng build --prod --base-href \"/ng-lp-manager/\""
   },
   "private": true,
   "dependencies": {

@@ -1,6 +1,6 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { NgLpModule } from 'projects/angular-lp/src/public_api';
+import { NgLpModule } from 'projects/ng-lp/src/public_api';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {

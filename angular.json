@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ng-lp": {
+    "ng-lp-manager": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -135,33 +135,33 @@
         }
       }
     },
-    "angular-lp": {
-      "root": "projects/angular-lp",
-      "sourceRoot": "projects/angular-lp/src",
+    "ng-lp": {
+      "root": "projects/ng-lp",
+      "sourceRoot": "projects/ng-lp/src",
       "projectType": "library",
       "prefix": "ng-lp",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/angular-lp/tsconfig.lib.json",
-            "project": "projects/angular-lp/ng-package.json"
+            "tsConfig": "projects/ng-lp/tsconfig.lib.json",
+            "project": "projects/ng-lp/ng-package.json"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/angular-lp/src/test.ts",
-            "tsConfig": "projects/angular-lp/tsconfig.spec.json",
-            "karmaConfig": "projects/angular-lp/karma.conf.js"
+            "main": "projects/ng-lp/src/test.ts",
+            "tsConfig": "projects/ng-lp/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-lp/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/angular-lp/tsconfig.lib.json",
-              "projects/angular-lp/tsconfig.spec.json"
+              "projects/ng-lp/tsconfig.lib.json",
+              "projects/ng-lp/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"

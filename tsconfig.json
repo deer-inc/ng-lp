@@ -19,11 +19,11 @@
       "dom"
     ],
     "paths": {
-      "angular-lp": [
-        "dist/angular-lp"
+      "ng-lp": [
+        "dist/ng-lp"
       ],
-      "angular-lp/*": [
-        "dist/angular-lp/*"
+      "ng-lp/*": [
+        "dist/ng-lp/*"
       ]
     }
   }
