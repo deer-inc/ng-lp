@@ -1,9 +1,10 @@
-import { Component, Input, OnInit, ViewEncapsulation, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Lp } from './lp';
 import {
   faGithub,
   faTwitter,
-  faFacebook
+  faFacebook,
+  IconDefinition
 } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
@@ -16,9 +17,9 @@ export class NgLpComponent implements OnInit {
   @Output() handleClickAction: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Input() data: Lp;
 
-  faGithub = faGithub;
-  faTwitter = faTwitter;
-  faFacebook = faFacebook;
+  faGithub: IconDefinition = faGithub;
+  faTwitter: IconDefinition = faTwitter;
+  faFacebook: IconDefinition = faFacebook;
 
   constructor() { }
 
