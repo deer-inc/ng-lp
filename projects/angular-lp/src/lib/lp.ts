@@ -96,6 +96,7 @@ export interface Account {
 
 export interface Lp {
   title: string;
+  logoURL?: string;
   owner: string;
   account?: Account;
   menues?: Menu[];

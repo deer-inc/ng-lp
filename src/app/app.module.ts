@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { NgLpModule } from 'projects/angular-lp/src/public_api';
+import { NgLpModule } from 'angular-lp';
 
 @NgModule({
   declarations: [

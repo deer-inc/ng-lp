@@ -6,6 +6,7 @@
 
 .nglp-grid {
   display: grid;
+  grid-template-columns: 1fr;
   grid-gap: 48px 24px;
   @for $i from 1 through 12 {
     &--#{$i} {
