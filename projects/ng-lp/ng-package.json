@@ -1,6 +1,13 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
   "dest": "../../dist/ng-lp",
+  "whitelistedNonPeerDependencies": [
+    "@fortawesome/angular-fontawesome",
+    "@fortawesome/fontawesome-svg-core",
+    "@fortawesome/free-brands-svg-icons",
+    "@fortawesome/free-solid-svg-icons",
+    "safe-pipe"
+  ],
   "lib": {
     "entryFile": "src/public_api.ts"
   }
