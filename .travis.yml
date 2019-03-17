@@ -21,12 +21,12 @@ install:
 
 script:
   - npm run test -- --no-watch --no-progress --code-coverage --browsers=ChromeHeadlessCI
-  - npm run e2e -- --protractor-config=e2e/protractor-ci.conf.js
+  - npm run e2e ng-lp -- --protractor-config=e2e/protractor-ci.conf.js
   - npm run lint
   - npm run gh-build
 
 after_success:
-  - cat ./coverage/ng-lp-manager/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+  - cat ./coverage/ng-lp/lcov.info | ./node_modules/coveralls/bin/coveralls.js
 
 deploy:
   provider: pages
