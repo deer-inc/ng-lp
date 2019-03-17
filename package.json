@@ -1,0 +1,26 @@
+{
+  "name": "ng-lp",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^7.2.0",
+    "@angular/core": "^7.2.0",
+    "@fortawesome/angular-fontawesome": "^0.3.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.15",
+    "@fortawesome/free-brands-svg-icons": "^5.7.2",
+    "@fortawesome/free-solid-svg-icons": "^5.7.2",
+    "safe-pipe": "^0.3.0"
+  },
+  "main": "bundles/ng-lp.umd.js",
+  "module": "fesm5/ng-lp.js",
+  "es2015": "fesm2015/ng-lp.js",
+  "esm5": "esm5/ng-lp.js",
+  "esm2015": "esm2015/ng-lp.js",
+  "fesm5": "fesm5/ng-lp.js",
+  "fesm2015": "fesm2015/ng-lp.js",
+  "typings": "ng-lp.d.ts",
+  "metadata": "ng-lp.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}
