@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { NgLpModule } from 'ng-lp';
+import { NgLpModule } from '@deer-inc/ng-lp';
 import { MonacoEditorModule } from 'ngx-monaco-editor';
 
 

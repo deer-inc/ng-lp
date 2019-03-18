@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Lp, Voice, Feature } from 'projects/ng-lp/src/lib/lp';
+import { Lp, Voice } from '@deer-inc/ng-lp';
 
 import * as faker from 'faker/locale/ja';
 import { FormControl } from '@angular/forms';

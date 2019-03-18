@@ -136,33 +136,33 @@
         }
       }
     },
-    "ng-lp": {
-      "root": "projects/ng-lp",
-      "sourceRoot": "projects/ng-lp/src",
+    "@deer-inc/ng-lp": {
+      "root": "projects/deer-inc/ng-lp",
+      "sourceRoot": "projects/deer-inc/ng-lp/src",
       "projectType": "library",
-      "prefix": "ng-lp",
+      "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/ng-lp/tsconfig.lib.json",
-            "project": "projects/ng-lp/ng-package.json"
+            "tsConfig": "projects/deer-inc/ng-lp/tsconfig.lib.json",
+            "project": "projects/deer-inc/ng-lp/ng-package.json"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/ng-lp/src/test.ts",
-            "tsConfig": "projects/ng-lp/tsconfig.spec.json",
-            "karmaConfig": "projects/ng-lp/karma.conf.js"
+            "main": "projects/deer-inc/ng-lp/src/test.ts",
+            "tsConfig": "projects/deer-inc/ng-lp/tsconfig.spec.json",
+            "karmaConfig": "projects/deer-inc/ng-lp/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/ng-lp/tsconfig.lib.json",
-              "projects/ng-lp/tsconfig.spec.json"
+              "projects/deer-inc/ng-lp/tsconfig.lib.json",
+              "projects/deer-inc/ng-lp/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
