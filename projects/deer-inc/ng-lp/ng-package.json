@@ -1,6 +1,6 @@
 {
   "$schema": "../../../node_modules/ng-packagr/ng-package.schema.json",
-  "dest": "../../dist/ng-lp",
+  "dest": "../../../dist/deer-inc/ng-lp",
   "whitelistedNonPeerDependencies": [
     "@fortawesome/angular-fontawesome",
     "@fortawesome/fontawesome-svg-core",
