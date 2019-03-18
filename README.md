@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.com/deer-inc/ng-lp.svg?branch=master)](https://travis-ci.com/deer-inc/ng-lp)
 [![Coverage Status](https://coveralls.io/repos/github/deer-inc/ng-lp/badge.svg?branch=master)](https://coveralls.io/github/deer-inc/ng-lp?branch=master)
+![npm](https://img.shields.io/npm/v/@deer-inc/ng-lp.svg)
 ![GitHub](https://img.shields.io/github/license/deer-inc/ng-lp.svg)
 
 # NGLP
