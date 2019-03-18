@@ -15,7 +15,9 @@ import { MonacoEditorModule } from 'ngx-monaco-editor';
     BrowserModule,
     NgLpModule,
     ReactiveFormsModule,
-    MonacoEditorModule.forRoot()
+    MonacoEditorModule.forRoot({
+      baseUrl: './assets'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
