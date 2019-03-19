@@ -7,9 +7,25 @@
 
 NGLPライブラリを使えばデータバインドでモダンなLPをデータバインドのみで作成できます。
 
+## Demo
+
 [Demo](https://deer-inc.github.io/ng-lp/)
 
-## Usage
+## Getting Started
+
+```bash
+yarn add @deer-inc/ng-lp
+```
+
+app.module.ts
+```ts
+import { NgLpModule } from '@deer-inc/ng-lp';
+
+  imports: [
+    BrowserModule,
+    NgLpModule,
+...
+```
 
 Componentでデータを設計し、HTMLで `ng-lp` コンポーネントにバインドするだけです。
 
